@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
-import { HomePage } from "./components/homePage";
+import Counter from "./components/Counter";
+
 const App = () => {
+  const count = useSelector((state) => state.counter.count);
   return (
     <>
-      <HomePage />
+      <h1>Counter : {count}</h1>
+      <Counter name="debasis saikia" />
     </>
   );
 };
