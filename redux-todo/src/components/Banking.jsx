@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import {
+  deposit,
+  withdraw,
+  deleteAccount,
+  collectInterest,
+  toggleAccount,
+} from "./actions/bankingActions";
 
 const Banking = () => {
   const [amount, setAmount] = useState("");
   const dispatch = useDispatch();
   const handleDeposit = () => {
-    dispatch({ type: "DEPOSIT", amount: Number(amount) });
+    dispatch(deposit(amount));
   };
   const handleWithdraw = () => {
-    dispatch({ type: "WITHDRAW", amount: Number(amount) });
+    dispatch(withdraw(amount));
   };
   const handleInterest = () => {
-    dispatch({ type: "COLLECT_INTEREST" });
+    dispatch(collectInterest());
   };
   const handleDelete = () => {
-    dispatch({ type: "DELETE_ACCOUNT" });
+    dispatch(deleteAccount());
   };
-  const handleChangeAccount = () => {};
+  const handleChangeAccount = () => {
+    dispatch(toggleAccount());
+  };
 
   return (
     <div className="form_group">
