@@ -4,17 +4,22 @@ import { fetchPosts } from "../state/actiions";
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state);
+  const state = useSelector((state) => state);
   useEffect(() => {
     dispatch(fetchPosts());
   }, []);
+
+  const renderPosts = () => {
+    if (state.loading) {
+      <h1>Loading.....</h1>;
+    }
+    return state.items.map((post) => {
+      return <h3 key={post.id}>{post.title}</h3>;
+    });
+  };
   return (
     <>
-      <div>
-        {posts.map((post) => {
-          return <h3 key={post.id}>{post.title}</h3>;
-        })}
-      </div>
+      <div>{renderPosts()}</div>
     </>
   );
 };

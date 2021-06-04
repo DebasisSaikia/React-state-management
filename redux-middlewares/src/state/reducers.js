@@ -4,7 +4,6 @@ const initialState = {
   error: null,
 };
 
-const initialState = [];
 export const postReducers = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_POSTS_DATA":
