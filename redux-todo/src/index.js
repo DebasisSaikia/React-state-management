@@ -6,9 +6,10 @@ import App1 from "./App1";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { bankingReducers } from "./components/reducers/bankingReducers";
+import { rootReducers } from "./components/reducers/combineReducer";
 // import store from "./redux/configureStore";
 
-const store = createStore(bankingReducers);
+const store = createStore(rootReducers);
 
 ReactDOM.render(
   // <Provider store={store}>

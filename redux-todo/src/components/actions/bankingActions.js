@@ -16,3 +16,6 @@ export const deleteAccount = () => {
 export const toggleAccount = () => {
   return { type: "CHANGE_ACCOUNT" };
 };
+export const toggleAuth = () => {
+  return { type: "TOGGLE_AUTH" };
+};

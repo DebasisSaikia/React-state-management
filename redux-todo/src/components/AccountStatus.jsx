@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const AccountStatus = () => {
-  const isSaving = useSelector((state) => state.isSaving);
+  const isSaving = useSelector((state) => state.banking.isSaving);
   return (
     <div>
       <h1>{isSaving ? "Saving Accounts" : "Current Account"}</h1>
