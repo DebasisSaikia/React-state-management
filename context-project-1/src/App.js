@@ -1,12 +1,13 @@
 import "./App.css";
 import MovieList from "./components/MovieList";
-
+import Nav from "./components/Nav";
+import { MovieProvider } from "./components/MovieContext";
 function App() {
   return (
-    <div className="App">
-      <h1>Context Api tutorial</h1>
+    <MovieProvider>
+      <Nav />
       <MovieList />
-    </div>
+    </MovieProvider>
   );
 }
 
